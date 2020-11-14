@@ -16,7 +16,7 @@ def init_langs():
                 'Ñą¹³mba³', 'Ru²¹qua²', 'Ti¹rú³',
                 'Wá²ko¹xe²', 'Ñį²nda¹³', 'Ku¹su³hi¹',
                 'Lli¹³ya³mba¹te¹xe²', 'Mbi²ché³la¹', 'Sa³¹ka¹',
-                'Ŋų¹nį²́'
+                'Ŋų¹nį́²́'
             ],
             [
                 'Mbi³', 'Rra³', 'Li³', 'Hé³xi²', 'Ha³',
@@ -134,7 +134,43 @@ def init_langs():
         awatese.numbers.append('Ziya ' + number)
         awatese.numbers.append('Řąziya ' + number)
 
-    return [ndxiixun, hlung, mañi, nichoh, awatese]
+    yashuhay = Lang(
+            [
+                'Emáathashi',
+                'Shiishih',
+                'Kingyáh',
+                'Ngyaangma',
+                'Thuuha',
+                'Kithu\'oshah',
+                'Ashihoshih',
+                'Ngyinggáa',
+                'Hushuhi',
+                'Iyamákeshi',
+                'Míshe',
+                'Sháaha',
+                'Húngih',
+            ],
+            [
+                'Mya',
+                'Tho',
+                'U',
+                'Akúum',
+                'Tane',
+                'Ngamya',
+                'Ngatho',
+                'Ngaw',
+                'Hommya',
+                'Taata'
+                ],
+            [ ],
+            [ ]
+            )
+
+    for number in yashuhay.numbers[:-1]:
+        yashuhay.numbers.append('Taata ' + number)
+        yashuhay.numbers.append('Hataha ' + number)
+
+    return [ndxiixun, hlung, mañi, nichoh, awatese, yashuhay]
 
 
 def datename(lang):
