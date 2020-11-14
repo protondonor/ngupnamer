@@ -23,7 +23,9 @@ def init_langs():
                 'Nį́³', 'Nde¹rra³', 'Nde¹li³', 'Ŋgo³kú³', 'Zį²ʼą¹zą²'
             ],
             [
-                'Se²'
+                'Se²', 'I²chi²', 'Ŋą́²se²', 'Ñų²hų́²', 'Sį́²', 'Ru³',
+                'Xą²', 'Á²xi²', 'Mį¹ŋą́²', 'Ya³ta³', 'Pi³', 'Yu³',
+                'Ñdxu²', 'Ñdxé²', 'Rra²lli¹ʼi²', 'Ya³mą²sa¹nda²xi²'
                 ],
             []
             )
@@ -44,14 +46,7 @@ def init_langs():
                 'Ŋų̀nerà', 'Ŋų̀neļì', 'Ŋòkunm', 'Zįʼązą'
                 ],
              [
-                 'Řù',
-                 'Xą',
-                 'Zą̀ą',
-                 'Zįųñ',
-                 'Mįŋąmb',
-                 'Hàpin',
-                 'Hàtambum',
-                 'Chałŋo',
+                 'Řù', 'Xą', 'Zą̀ą', 'Zįųñ', 'Mįŋąmb', 'Hàpin', 'Hàtambum', 'Chałŋo',
                  'Ąndupokuŋo', # beautiful
                  'Ąndułįŋ', # bright/light
                  'Ąnduwiiwii', # whisperer
@@ -87,11 +82,12 @@ def init_langs():
                 'Ŋụlẹrạ','Ŋụlẹlị','Ŋokun','Sịyịhạạsạ'
                 ],
              [
-                 'Tọnụldạh',
-                 'Ŋoruyalayex'
+                 'Tọnụldạh', 'Tohusalosek', 'Ŋoruyalayex', 'Ŋorukoyasehe', 'Tokwikwi',
+                 'Ñu', 'Yu', 'Ñet', 'Ñek', 'Rar', 'Mịị'
                  ],
              [
-                 'Sạmlạnị'
+                 'Sạmlạnị', 'Nụhụnụpọk', 'Ñạwịlọlọk', 'Ŋułok', 'Kayani', 'Nụjạŋụ',
+                 'Lułiŋ', 'Jatawunii', 'Japetmañ', 'Lakahonix'
                  ]
              )
 
@@ -148,7 +144,7 @@ def datename(lang):
 
 
 def byname(lang):
-    if random.randint(1,3) > 1:
+    if random.randint(1,2) > 1:
         return ''
     if len(lang.bynames) == 0:
         return ''
@@ -156,7 +152,7 @@ def byname(lang):
 
 
 def given_name(lang):
-    if random.randint(1,6) > 1:
+    if random.randint(1,3) > 1:
         return ''
     if len(lang.given_names) == 0:
         return ''
