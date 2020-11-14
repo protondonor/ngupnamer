@@ -6,6 +6,8 @@ from typing import List
 class Lang:
     months: List[str]
     numbers: List[str]
+    bynames: List[str]
+    given_names: List[str]
 
 def init_langs():
     ndxiixun = Lang(
@@ -19,7 +21,11 @@ def init_langs():
             [
                 'Mbi³', 'Rra³', 'Li³', 'Hé³xi²', 'Ha³',
                 'Nį́³', 'Nde¹rra³', 'Nde¹li³', 'Ŋgo³kú³', 'Zį²ʼą¹zą²'
-            ]
+            ],
+            [
+                'Se²'
+                ],
+            []
             )
 
     for number in ndxiixun.numbers[:-1]:
@@ -36,7 +42,33 @@ def init_langs():
              [
                 'Mwì', 'Rà', 'Ļì', 'Hèx', 'Hà', 'Ŋų̀nįm',
                 'Ŋų̀nerà', 'Ŋų̀neļì', 'Ŋòkunm', 'Zįʼązą'
-                ]
+                ],
+             [
+                 'Řù',
+                 'Xą',
+                 'Zą̀ą',
+                 'Zįųñ',
+                 'Mįŋąmb',
+                 'Hàpin',
+                 'Hàtambum',
+                 'Chałŋo',
+                 'Ąndupokuŋo', # beautiful
+                 'Ąndułįŋ', # bright/light
+                 'Ąnduwiiwii', # whisperer
+                 'Ąnduʼliʼli', # kind
+                 'Nąnduŋawkaŋawka', # I hear they're a liar
+                 'Nąndòinchiʼdaʼ', # I hear they stole something
+                 'Nąnduapaà', # rumored to be dangerous
+                 'Nąndotumąyek', # accused murderer
+                 'Nąñą Kachaą̀ni' # scarred
+                 ],
+             [
+                 'Ząmřani', 'ʼAchùlani', 'Chułiko', 'Ŋàaze', 'Yawuu',
+                 'Iʼichułko', 'Emiknoʼoł', 'Ateche',
+                 'Mirèñą Zamřani', 'Į̀ŋuʼa ʼAchùlani', 'Rùchani Chułiko',
+                 'Mirèʼaa Iʼichułko', 'Chuunchoochhą Ateche',
+                 'Ŋòruyàļàaex', 'Ñi Kayà', 'Ŋųhŋąą', 'Hàłahu'
+                 ]
              )
 
     for number in mañi.numbers[:-1]:
@@ -53,7 +85,14 @@ def init_langs():
              [
                 'Muwi', 'Ra', 'Li', 'Jex', 'Ja', 'Ŋụlịw',
                 'Ŋụlẹrạ','Ŋụlẹlị','Ŋokun','Sịyịhạạsạ'
-                ]
+                ],
+             [
+                 'Tọnụldạh',
+                 'Ŋoruyalayex'
+                 ],
+             [
+                 'Sạmlạnị'
+                 ]
              )
 
     for number in hlung.numbers[:-1]:
@@ -70,7 +109,9 @@ def init_langs():
              [
                 'Mbguì', 'Rà', 'Guì', 'Jsè', 'Jà',
                 'Nį̀u', 'Ndérà', 'Ndéguì', 'Ŋcòcùu', 'Zįꞌzą́'
-                ]
+                ],
+             [],
+             []
              )
 
     for number in nichoh.numbers[:-1]:
@@ -88,7 +129,9 @@ def init_langs():
                 'Mwi', 'Řą', 'Łi', 'Exe', 'Ahą',
                 'Ngunim', 'Ngunrą', 'Ngunłi', 'Ngukunum',
                 'Ziya'
-                ]
+                ],
+            [],
+            []
             )
 
     for number in awatese.numbers[:-1]:
@@ -104,7 +147,30 @@ def datename(lang):
     return number + ' ' + month
 
 
+def byname(lang):
+    if random.randint(1,3) > 1:
+        return ''
+    if len(lang.bynames) == 0:
+        return ''
+    return random.choice(lang.bynames)
+
+
+def given_name(lang):
+    if random.randint(1,6) > 1:
+        return ''
+    if len(lang.given_names) == 0:
+        return ''
+    return random.choice(lang.given_names)
+
+
 def ngupname(langs):
     lang = random.choice(langs)
-    return datename(lang)
+    name = datename(lang)
+    this_byname = byname(lang)
+    this_given_name = given_name(lang)
+    if this_given_name != '':
+        name = this_given_name + ' ' + name
+    if this_byname != '':
+        name = name + ' ' + this_byname
+    return name
 
