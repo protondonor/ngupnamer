@@ -136,34 +136,17 @@ def init_langs():
 
     yashuhay = Lang(
             [
-                'Emáathashi',
-                'Shiishih',
-                'Kingyáh',
-                'Ngyaangma',
-                'Thuuha',
-                'Kithu\'oshah',
-                'Ashihoshih',
-                'Ngyinggáa',
-                'Hushuhi',
-                'Iyamákeshi',
-                'Míshe',
-                'Sháaha',
+                'Emáathashi', 'Shiishih', 'Kingyáh', 'Ngyaangma',
+                'Thuuha', 'Kithu\'oshah', 'Ashihoshih', 'Ngyinggáa',
+                'Hushuhi', 'Iyamákeshi', 'Míshe', 'Sháaha',
                 'Húngih',
             ],
             [
-                'Mya',
-                'Tho',
-                'U',
-                'Akúum',
-                'Tane',
-                'Ngamya',
-                'Ngatho',
-                'Ngaw',
-                'Hommya',
-                'Taata'
+                'Mya', 'Tho', 'U', 'Akúum', 'Tane',
+                'Ngamya', 'Ngatho', 'Ngaw', 'Hommya', 'Taata'
                 ],
             [ ],
-            [ ]
+            ['Eekak', 'Kutó', 'Hama']
             )
 
     for number in yashuhay.numbers[:-1]:
@@ -188,6 +171,9 @@ def byname(lang):
 
 
 def given_name(lang):
+    if 'Eekak' in lang.given_names:
+        # Always return given names (moiety names) for Yashuhay
+        return random.choice(lang.given_names)
     if random.randint(1,3) > 1:
         return ''
     if len(lang.given_names) == 0:
