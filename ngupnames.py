@@ -153,7 +153,14 @@ def init_langs():
         yashuhay.numbers.append('Taata ' + number)
         yashuhay.numbers.append('Hataha ' + number)
 
-    return [ndxiixun, hlung, mañi, nichoh, awatese, yashuhay]
+    return {
+        'ndxiixun': ndxiixun,
+        'hlung':    hlung,
+        'mañi':     mañi,
+        'nichoh':   nichoh,
+        'awatese':  awatese,
+        'yashuhay': yashuhay
+        }
 
 
 def datename(lang):
@@ -181,8 +188,7 @@ def given_name(lang):
     return random.choice(lang.given_names)
 
 
-def ngupname(langs):
-    lang = random.choice(langs)
+def ngupname(lang):
     name = datename(lang)
     this_byname = byname(lang)
     this_given_name = given_name(lang)

@@ -14,24 +14,20 @@ client = discord.Client()
 langs = ngupnames.init_langs()
 
 
+def dict_choice(d):
+    return random.choice(list(d.values()))
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
 
-    # ngupnames = [
-    #     'Ŋụlẹrạ Kułujiko',
-    #     'Jń Tọnụldạh',
-    #     'Mirèñą Zamřani Zįʼąząļì Liì',
-    #     'Rra³ Zį²ʼą¹zą² Mbi³ Ti¹rú³',
-    #     'Hé³xi² Ñą¹³mba³ Se²',
-    #     'Ra Sịyịhạạsạ Muwi Tirukkoxał',
-    #     'Ñžeз Ra Sịyịhạạsạ Ŋokun Luukwa Ñaƞ',
-    #     'Sạmlạnị Sịyịhạạsạ Ra Jakwarał Ŋoruyalayex'
-    # ]
-
-    if message.content == '!ngupname':
-        response = ngupnames.ngupname(langs)
+    if message.content.startswith('!ngupname'):
+        args = message.content.split()
+        if len(args) > 1 and args[1] in langs.keys():
+            response = ngupnames.ngupname(langs[args[1]])
+        else:
+            response = ngupnames.ngupname(dict_choice(langs))
         await message.channel.send(response)
 
 
