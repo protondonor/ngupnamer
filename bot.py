@@ -3,6 +3,7 @@ import os
 import discord
 import random
 import ngupnames
+import conjugamatron
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -28,6 +29,14 @@ async def on_message(message):
             response = ngupnames.ngupname(langs[args[1]])
         else:
             response = ngupnames.ngupname(dict_choice(langs))
+        await message.channel.send(response)
+
+    if message.content.startswith('!conjugate'):
+        args = message.content.split()
+        if len(args) < 3:
+            response = 'Conjugate what?'
+        else:
+            response = conjugamatron.conjugate(args[1], args[2:])
         await message.channel.send(response)
 
 
