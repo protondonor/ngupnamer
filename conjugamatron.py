@@ -126,6 +126,8 @@ def conjugate(verb, args):
             continue
         if coordinator == '' and arg in coordinators.keys():
             coordinator = atr_harmonize(coordinators[arg], stem_harmony)
+    if evidential == '':
+        evidential_harmony = stem_harmony
     agent = atr_harmonize(agent, evidential_harmony)
 
     return agent + evidential + patient + tense + aspect + mood + verb + coordinator
