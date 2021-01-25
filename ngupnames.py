@@ -10,6 +10,23 @@ class Lang:
     given_names: List[str]
 
 def init_langs():
+    chinh = Lang(
+            [
+                'Xìŋ', 'Sæŋ', 'Kwèy', 'Kæŋ', 'Èŋ', 'Lhìŋ', 'Mùŋ',
+                'Dèŋ', 'Tjæ̀yj', 'Blhyⁿ', 'Chuŋ', 'Gæ̀yŋ'
+            ],
+            [
+                'Mwì', 'Ýymwì', 'Lhì', 'Ýylhì', 'Lhìæ',
+                'Ŋdỳm', 'Ŋdéæ̀', 'Ŋdéì', 'Ŋkỳnb', 'Chjáàⁿ',
+            ],
+            [],
+            []
+            )
+
+    for number in chinh.numbers[:-1]:
+        chinh.numbers.append('Chjáàⁿ ' + number)
+        chinh.numbers.append('Ýymwì Chjáàⁿ ' + number)
+
     ndxiixun = Lang(
             [
                 'Kwą¹rá²se²', 'Chi²¹xí²', 'Za²ñą¹³',
@@ -154,6 +171,7 @@ def init_langs():
         yashuhay.numbers.append('Hataha ' + number)
 
     return {
+        'chinh':    chinh,
         'ndxiixun': ndxiixun,
         'hlung':    hlung,
         'mañi':     mañi,
