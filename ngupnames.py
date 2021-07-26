@@ -10,6 +10,37 @@ class Lang:
     given_names: List[str]
 
 def init_langs():
+    kwang_names = [
+                "A", "Ain", "Auq", "Bãi", "Bãichù", "Baq",
+                "Bàw", "Boun", "Chauq", "Chì", "Dã", "Dai",
+                "Dan", "Do", "Du", "Dwẽ", "Ein", "Gai",
+                "Gain", "Gan", "Gi, Giq", "Goun", "Gu",
+                "Gwa", "Hà", "Hã", "Hà'auq", "Hài", "Hàin",
+                "Hi", "Ì", "Iq", "Ja", "Jan", "Jèin", "Ji",
+                "Jwa", "Khã", "Khò", "Kõ", "Kouq", "Kũ",
+                "Kyain", "Lhã", "Lhãw", "Lhè", "Lhòun",
+                "Lhouq", "Li", "Loun", "Lu", "Lu", "Lwe",
+                "Lwẽ", "Lya", "Lyeiq", "Lyĩ", "Mai", "Mein",
+                "Meiq", "Mhain", "Mheiq", "Mi", "Na", "Nã",
+                "Ne", "Nẽ", "Ngòun", "Nyãw", "Nyhu", "O",
+                "Oun", "Pàn", "Pauq", "Phà", "Phàdwẽ",
+                "Phauq", "Phiq", "Phõ", "Pi", "Puq", "Sãw",
+                "Sein", "Sẽo", "Shã", "Shaiq", "Sheiq",
+                "Shì", "Shĩ", "Shu", "Swã", "Swẽ", "Swu",
+                "Thã", "Thãboun", "Thẽ", "Thì", "Tiq",
+                "Toun", "Two", "Tyan", "Uq", "Waun", "Wẽ",
+                "Whaiq", "Whoun", "Wo'nyi", "Ya", "Ya",
+                "Yã", "Yauq", "Yèin", "Yèin Li", "Youq",
+                "Zã", "Zaiq", "Ze", "Zẽ", "Zòun", "Zù",
+                "Zũ", "Zũ"
+            ]
+    kwang = Lang(
+            [],
+            [],
+            kwang_names,
+            kwang_names
+            )
+
     chinh = Lang(
             [
                 'Xìŋ', 'Sæŋ', 'Kwèy', 'Kæŋ', 'Èŋ', 'Lhìŋ', 'Mùŋ',
@@ -171,6 +202,7 @@ def init_langs():
         yashuhay.numbers.append('Hataha ' + number)
 
     return {
+        'kwang':    kwang,
         'chinh':    chinh,
         'ndxiixun': ndxiixun,
         'hlung':    hlung,
@@ -207,6 +239,9 @@ def given_name(lang):
 
 
 def ngupname(lang):
+    if 'Lhouq' in lang.bynames:
+        # Always return bynames (family names) and given names for Kwang
+        return random.choice(lang.bynames) + ' ' + random.choice(lang.given_names)
     name = datename(lang)
     this_byname = byname(lang)
     this_given_name = given_name(lang)
