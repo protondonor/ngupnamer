@@ -1,10 +1,12 @@
 import os
+import random
 
 import discord
-import random
-import ngupnames
-import conjugamatron
 from dotenv import load_dotenv
+
+import conjugamatron
+import ngupnames
+import semshifter
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -37,6 +39,11 @@ async def on_message(message):
             response = 'Conjugate what?'
         else:
             response = conjugamatron.conjugate(args[1], args[2:])
+        await message.channel.send(response)
+
+    if message.content.startswith('!semshifter'):
+        args = message.content[12:]
+        response = semshifter.semshift(args)
         await message.channel.send(response)
 
 
