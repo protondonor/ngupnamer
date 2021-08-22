@@ -1,30 +1,30 @@
 agents = {
     '1SG.SUBJ': 'ŋe',
-    '1E.SUBJ':  'ma',
-    '1I.SUBJ':  'ŋo',
-    '2S.SUBJ':  'ri',
-    '2P.SUBJ':  'i',
+    '1E.SUBJ': 'ma',
+    '1I.SUBJ': 'ŋo',
+    '2S.SUBJ': 'ri',
+    '2P.SUBJ': 'i',
     '3AN.SUBJ': 'to',
     '3IN.SUBJ': 'ñe',
     '3PL.SUBJ': 'je'
-    }
+}
 
 patients = {
     '1SG': 'n',
-    '1E':  'ñu',
-    '1I':  'ma',
-    '2S':  'rii',
-    '2P':  'yi',
+    '1E': 'ñu',
+    '1I': 'ma',
+    '2S': 'rii',
+    '2P': 'yi',
     '3AN': 'tu',
     '3IN': 'in',
     '3PL': 'ja'
-    }
+}
 
 evidentials = {
-    'HSY':  'nạ',
+    'HSY': 'nạ',
     'INFR': 'ñi',
-    'NEG':  'pa'
-    }
+    'NEG': 'pa'
+}
 
 # applicatives = {
 #     'PRIV':  'tahamuwi',
@@ -45,32 +45,32 @@ tenses = {
     'FUT': 'ruw',
     'REC': 'ye',
     'REM': 'dah'
-    }
+}
 
 aspects = {
-    'HAB':  'nawex',
+    'HAB': 'nawex',
     'PERF': 'law'
-    }
+}
 
 moods = {
     'SUBJ': 'so',
     'COND': 'ław',
-    'OPT':  'saŋ',
+    'OPT': 'saŋ',
     'DESD': 'sek'
-    }
+}
 
 coordinators = {
-    'AND':  'rali',
-    'OR':   'ạạn',
-    'XOR':  'puun',
-    'REL':  'se',
+    'AND': 'rali',
+    'OR': 'ạạn',
+    'XOR': 'puun',
+    'REL': 'se',
     'BECAUSE.SS': 'nạŋ',
     'BECAUSE.DS': 'tinaŋ',
     'BUT.SS': 'kati',
     'BUT.DS': 'peheku',
     'THEN.SS': 'peheta',
     'THEN.DS': 'pehetu'
-    }
+}
 
 
 def get_atr_harmony(morpheme):
@@ -131,5 +131,3 @@ def conjugate(verb, args):
     agent = atr_harmonize(agent, evidential_harmony)
 
     return agent + evidential + patient + tense + aspect + mood + verb + coordinator
-
-
