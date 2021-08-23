@@ -7,9 +7,11 @@ from dotenv import load_dotenv
 import conjugamatron
 import ngupnames
 import semshifter
+import logging
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+logging.basicConfig(level=logging.INFO)
 
 client = discord.Client()
 
@@ -19,12 +21,27 @@ langs = ngupnames.init_langs()
 def dict_choice(d):
     return random.choice(list(d.values()))
 
+
+def chunk_response(text: str) -> list:
+    words = iter(text.split(', '))
+    lines, current = [], next(words)
+    for word in words:
+        if len(current) + 2 + len(word) > 2000:
+            lines.append(current)
+            current = word
+        else:
+            current += ", " + word
+    lines.append(current)
+    return lines
+
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
 
     if message.content.startswith('!ngupname'):
+        print('starting ngupname')
         args = message.content.split()
         if len(args) > 1 and args[1] in langs.keys():
             response = ngupnames.ngupname(langs[args[1]])
@@ -41,9 +58,17 @@ async def on_message(message):
         await message.channel.send(response)
 
     if message.content.startswith('!semshifter'):
-        args = message.content[12:]
-        response = semshifter.semshift(args)
-        await message.channel.send(response)
-
+        print('starting semshifter')
+        async with message.channel.typing():
+            try:
+                args = message.content[12:]
+                response = list(semshifter.semshift(args))
+                response = ', '.join(response)
+                response = chunk_response(response)
+                for r in response:
+                    await message.channel.send(r)
+            except Exception as e:
+                await message.channel.send('There was an error! check your logs')
+                raise e
 
 client.run(TOKEN)
