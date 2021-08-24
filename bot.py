@@ -52,7 +52,7 @@ async def on_message(message):
     if message.content.startswith('!conjugate'):
         args = message.content.split()
         if len(args) < 3:
-            response = 'Conjugate what?'
+            response = conjugamatron.usage
         else:
             response = conjugamatron.conjugate(args[1], args[2:])
         await message.channel.send(response)

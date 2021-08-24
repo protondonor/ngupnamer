@@ -1,7 +1,22 @@
+usage = """Usage:
+!conjugate verb [optional args]
+Evidentials: HSY, INFR, NEG
+Tense: FUT, REC, REM
+Aspects: HAB, PERF
+Moods: SUBJ, COND, OPT, DESD
+Coordinators: AND, OR, XOR, REL, BECAUSE.SS, BECAUSE.DS, BUT.SS, BUT.DS, THEN.SS, THEN.DS
+Agents: 1S.SUBJ, 1E.SUBJ, 1I.SUBJ, 2S.SUBJ, 2P.SUBJ, 3AN.SUBJ, 3IN.SUBJ, 3P.SUBJ
+Patients: 1S, 1E, 1I, 2S, 2P, 3AN, 3IN, 3P
+"""
+
 agents = {
     '1SG.SUBJ': 'ŋe',
+    '1S.SUBJ': 'ŋe',
+    '1P.SUBJ': 'ma',
+    '1PL.SUBJ': 'ma',
     '1E.SUBJ': 'ma',
     '1I.SUBJ': 'ŋo',
+    '2SG.SUBJ': 'ri',
     '2S.SUBJ': 'ri',
     '2P.SUBJ': 'i',
     '3AN.SUBJ': 'to',
@@ -11,13 +26,19 @@ agents = {
 
 patients = {
     '1SG': 'n',
+    '1S': 'n',
     '1E': 'ñu',
+    '1PL': 'ñu',
+    '1P': 'ñu',
     '1I': 'ma',
+    '2SG': 'rii',
     '2S': 'rii',
+    '2PL': 'yi',
     '2P': 'yi',
     '3AN': 'tu',
     '3IN': 'in',
-    '3PL': 'ja'
+    '3PL': 'ja',
+    '3P': 'ja'
 }
 
 evidentials = {
@@ -103,6 +124,8 @@ def conjugate(verb, args):
     aspect = ''
     mood = ''
     coordinator = ''
+    if len(args) == 1 and args[0].upper() in ['HELP', 'USAGE', 'MAN']:
+        return usage
     for arg in args:
         arg = arg.upper()
         if evidential == '' and arg in evidentials.keys():
