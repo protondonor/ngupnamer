@@ -57,11 +57,11 @@ async def on_message(message):
             response = conjugamatron.conjugate(args[1], args[2:])
         await message.channel.send(response)
 
-    if message.content.startswith('!semshifter'):
+    if message.content.startswith('!semshift'):
         print('starting semshifter')
         async with message.channel.typing():
             try:
-                args = message.content[12:]
+                args = ' '.join(message.content.split(' ')[1:])
                 response = list(semshifter.semshift(args))
                 response = ', '.join(response)
                 response = chunk_response(response)

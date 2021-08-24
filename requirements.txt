@@ -1,4 +1,4 @@
 discord
 python-dotenv
 requests_cache
-https://github.com/rowanjacobs/semshifter/archive/refs/tags/0.0.1.tar.gz
+-e git+git://github.com/rowanjacobs/semshifter@0.0.2#egg=semshifter
