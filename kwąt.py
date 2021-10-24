@@ -30,4 +30,7 @@ def roll():
     action = random.choice(list(pemehąn.keys()))
     number = random.choice(list(peząhąn.keys()))
 
+    if action in ['xahąx', 'zerą']:
+        return f'{action}\n{pemehąn[action]}'
+
     return f'{action} {number}\n' + pemehąn[action].format(peząhąn[number], plural(peząhąn[number]))
