@@ -71,4 +71,18 @@ async def on_message(message):
                 await message.channel.send('There was an error! check your logs')
                 raise e
 
+    if message.content.startswith('!reverse'):
+        print('starting semshifter in reverse gear')
+        async with message.channel.typing():
+            try:
+                args = ' '.join(message.content.split(' ')[1:])
+                response = list(semshifter.reverse(args))
+                response = ', '.join(response)
+                response = chunk_response(response)
+                for r in response:
+                    await message.channel.send(r)
+            except Exception as e:
+                await message.channel.send('There was an error! check your logs')
+                raise e
+
 client.run(TOKEN)
