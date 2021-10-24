@@ -5,6 +5,7 @@ import discord
 from dotenv import load_dotenv
 
 import conjugamatron
+import kwąt
 import ngupnames
 import semshifter
 import logging
@@ -47,6 +48,10 @@ async def on_message(message):
             response = ngupnames.ngupname(langs[args[1]])
         else:
             response = ngupnames.ngupname(dict_choice(langs))
+        await message.channel.send(response)
+
+    if message.content.startswith('!kwąt') or message.content.startswith('!kwat'):
+        response = kwąt.roll()
         await message.channel.send(response)
 
     if message.content.startswith('!conjugate'):
