@@ -16,7 +16,7 @@ pemehąn = {
 # noinspection NonAsciiCharacters
 peząhąn = {
     'mwi •': '1',
-    'řą ☍': '2',
+    'řą ••': '2',
     'łi ⛬': '3',
     'łam ◆': 'half of the',
     'nanarą ▲': 'all of the',
