@@ -18,6 +18,8 @@ client = discord.Client()
 
 langs = ngupnames.init_langs()
 
+default_dictionaries = ['csd', 'pollex', 'prototai', 'clics', 'stedt']
+
 
 def dict_choice(d):
     return random.choice(list(d.values()))
@@ -67,7 +69,7 @@ async def on_message(message):
         async with message.channel.typing():
             try:
                 args = ' '.join(message.content.split(' ')[1:])
-                response = list(semshifter.semshift(args))
+                response = list(semshifter.semshift(args, dictionaries=default_dictionaries))
                 response = ', '.join(response)
                 response = chunk_response(response)
                 for r in response:
@@ -81,7 +83,7 @@ async def on_message(message):
         async with message.channel.typing():
             try:
                 args = ' '.join(message.content.split(' ')[1:])
-                response = list(semshifter.reverse(args))
+                response = list(semshifter.reverse(args, dictionaries=default_dictionaries))
                 response = ', '.join(response)
                 response = chunk_response(response)
                 for r in response:
