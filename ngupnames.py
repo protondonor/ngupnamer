@@ -59,8 +59,8 @@ def init_langs():
     )
 
     for number in chinh.numbers[:-1]:
-        chinh.numbers.append('Chyą́ą̀mh ' + number)
-        chinh.numbers.append('Į́įmwì Chyą́ą̀mh ' + number)
+        chinh.numbers.append('Jąą̀mh ' + number)
+        chinh.numbers.append('Į́įmwì Jąą̀mh ' + number)
 
     ndxiixun = Lang(
         [
