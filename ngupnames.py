@@ -49,10 +49,12 @@ def init_langs():
             'Dèng', 'Chàįy', 'Blhįmh', 'Chung', 'Gàįng'
         ],
         [
-            'Mwì', 'Į́įmwì', 'Lhì', 'Į́įlhì', 'Lhìa',
-            'Ngdį̀m', 'Ngdéà', 'Ngdéì', 'Ngkį̀nb', 'Chyą́ą̀mh',
+            'Mwì', 'Įįmwì', 'Lhì', 'Įįlhì', 'Lhìa', 'Ngdį̀m', 'Ngdeà', 
+            'Ngdeì', 'Ngkį̀nb', 'Jąą̀mh'
         ],
-        [],
+        [
+            'chą̀ąmhchą̀ąmh', 'ganh', 'líì', 'rįng', 'yįį́k', 'teók'
+        ],
         []
     )
 
