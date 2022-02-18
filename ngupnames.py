@@ -45,20 +45,20 @@ def init_langs():
 
     chinh = Lang(
         [
-            'Xìŋ', 'Sæŋ', 'Kwèy', 'Kæŋ', 'Èŋ', 'Lhìŋ', 'Mùŋ',
-            'Dèŋ', 'Tjæ̀yj', 'Blhyⁿ', 'Chuŋ', 'Gæ̀yŋ'
+            'Xìng', 'Sang', 'Kwèį', 'Kang', 'Èng', 'Lhìng', 'Mùng',
+            'Dèng', 'Chàįy', 'Blhįmh', 'Chung', 'Gàįng'
         ],
         [
-            'Mwì', 'Ýymwì', 'Lhì', 'Ýylhì', 'Lhìæ',
-            'Ŋdỳm', 'Ŋdéæ̀', 'Ŋdéì', 'Ŋkỳnb', 'Chjáàⁿ',
+            'Mwì', 'Į́įmwì', 'Lhì', 'Į́įlhì', 'Lhìa',
+            'Ngdį̀m', 'Ngdéà', 'Ngdéì', 'Ngkį̀nb', 'Chyą́ą̀mh',
         ],
         [],
         []
     )
 
     for number in chinh.numbers[:-1]:
-        chinh.numbers.append('Chjáàⁿ ' + number)
-        chinh.numbers.append('Ýymwì Chjáàⁿ ' + number)
+        chinh.numbers.append('Chyą́ą̀mh ' + number)
+        chinh.numbers.append('Į́įmwì Chyą́ą̀mh ' + number)
 
     ndxiixun = Lang(
         [
