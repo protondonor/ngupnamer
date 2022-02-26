@@ -201,6 +201,42 @@ def init_langs():
         ['Eekak', 'Kutó', 'Hama']
     )
 
+    karduvic = Lang(
+        [
+            'Yàr', 'Ngùkyung', 'Dàng', 'Lì Veng', 'Tyer', 'Tircùr'
+        ],
+        [
+            'Ngè', 'Dè', 'Zì', 'Hòr', 'Hè', 'Dèzì', 'Hèngè', 'Hèdè', 'Hèzì', 'Sot'
+        ],
+        [],
+        []
+    )
+
+    for number in karduvic.numbers[:-1]:
+        karduvic.numbers.append('Sot ' + number)
+        karduvic.numbers.append('Dè Sot ' + number)
+
+    for number in karduvic.numbers[0:6]:
+        karduvic.numbers.append('Zì Sot ' + number)
+
+    karduvic_surnames = [
+        'Jūmè', 'Ngan', 'Yìr', 'Ngyu', 'Lhèng', 'Vorng', 'Pyeng', 'Torzèp', 'Keng', 'Lè', 'Zi', 'Lhehòpep', 'Càurng',
+        'Lhèrn', 'Ze', 'Tircù', 'Èngzà', 'Garnga', 'Tiyìnè', 'Sēng', 'Myu', 'Erng', 'Chorcho', 'Ngamo', 'Zhirshu',
+        'Zhirhè', 'Vyaur', 'Caung', 'Varva', 'Vordùt', 'Deng', 'Tyiryir', 'Zoch', 'Yàur', 'Tìmè', 'Jē', 'Mve', 'Zhò',
+        'Tyoyeng', 'Yarmè', 'Kàurng', 'Mer', 'Turchur', 'Vemu', 'Zukye', 'Shèrgù', 'Ngaumo', 'Pin', 'Gung', 'Pev'
+    ]
+
+    karduvic_given_names = [
+        'Long', 'Tì', 'Tìmè', 'Pazhù', 'Chyo', 'Chup', 'Tyi', 'Kojyù', 'Bir', 'Yù', 'Ngun', 'Zorzor', 'Hèng', 'Hut',
+        'Ta', 'Tyek', 'Herngu', 'Bung', 'Zon', 'Tyèng', 'Dùr tèn', 'Mòzev', 'Puvè', 'Urn', 'Zò', 'Pyìr', 'Char', 'Nga',
+        'Zìrng', 'Dàng', 'Lhojàk', 'Hizup', 'Yàmizò', 'Sheng', 'Cu', 'Ming', 'Ner jartì', 'Yàrng', 'Cù', 'Yeyer', 'Hur',
+        'Tizùk', 'Zavèng', 'Erng', 'Ku', 'Tà', 'Cur', 'Sor', 'Terve', 'Byaung'
+    ]
+
+    for surname in karduvic_surnames:
+        for given in karduvic_given_names:
+            karduvic.given_names.append(surname + ' ' + given)
+
     for number in yashuhay.numbers[:-1]:
         yashuhay.numbers.append('Taata ' + number)
         yashuhay.numbers.append('Hataha ' + number)
@@ -213,7 +249,8 @@ def init_langs():
         'mañi': mañi,
         'nichoh': nichoh,
         'awatese': awatese,
-        'yashuhay': yashuhay
+        'yashuhay': yashuhay,
+        'karduvic': karduvic
     }
 
 
