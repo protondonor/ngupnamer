@@ -5,6 +5,7 @@ from typing import List
 
 @dataclass
 class Lang:
+    name: str
     months: List[str]
     numbers: List[str]
     bynames: List[str]
@@ -37,6 +38,7 @@ def init_langs():
         "Zũ", "Zũ"
     ]
     kwang = Lang(
+        'kwang',
         [],
         [],
         kwang_names,
@@ -44,12 +46,13 @@ def init_langs():
     )
 
     chinh = Lang(
+        'chinh',
         [
             'Xìng', 'Sang', 'Kwèį', 'Kang', 'Èng', 'Lhìng', 'Mùng',
             'Dèng', 'Chàįy', 'Blhįmh', 'Chung', 'Gàįng'
         ],
         [
-            'Mwì', 'Įįmwì', 'Lhì', 'Įįlhì', 'Lhìa', 'Ngdį̀m', 'Ngdeà', 
+            'Mwì', 'Įįmwì', 'Lhì', 'Įįlhì', 'Lhìa', 'Ngdį̀m', 'Ngdeà',
             'Ngdeì', 'Ngkį̀nb', 'Jąą̀mh'
         ],
         [
@@ -63,6 +66,7 @@ def init_langs():
         chinh.numbers.append('Į́įmwì Jąą̀mh ' + number)
 
     ndxiixun = Lang(
+        'ndxiixun',
         [
             'Kwą¹rá²se²', 'Chi²¹xí²', 'Za²ñą¹³',
             'Ñą¹³mba³', 'Ru²¹qua²', 'Ti¹rú³',
@@ -87,6 +91,7 @@ def init_langs():
         ndxiixun.numbers.append('Rra³ Zį²ʼą¹zą² ' + number)
 
     mañi = Lang(
+        'mañi',
         [
             'Hàkmąŗał', 'Chiixichko', 'Zñąą̀', 'Ñąą̀nma',
             'Řuukwa', 'Tirùkkoxał', 'Waxkoxko', 'Ñįnnaàko',
@@ -123,6 +128,7 @@ def init_langs():
         mañi.numbers.append('Rà Zįʼązą ' + number)
 
     hlung = Lang(
+        'hlung',
         [
             'Jakwarał', 'Xiixixok', 'Sñaa', 'Ñạạnạ',
             'Luukwa', 'Tirukkoxał', 'Waxkoxok', 'Ñịlạạkọ',
@@ -148,6 +154,7 @@ def init_langs():
         hlung.numbers.append('Ra Sịyịhạạsạ ' + number)
 
     nichoh = Lang(
+        'nichoh',
         [
             'Jàcuą́uhtlà', 'Chístzi', 'Zñą̂', 'Ñą̂u',
             'Ácuú', 'Tírùj', 'Guascsó', 'Ñįndâ',
@@ -167,6 +174,7 @@ def init_langs():
         nichoh.numbers.append('Rà Zįꞌzą́ ' + number)
 
     awatese = Lang(
+        'awatese',
         [
             'Karał', 'Tixin', 'Zahang', 'Nayąnmanga',
             'Řuką', 'Tukoxąru', 'Wąxku', 'Ningną',
@@ -187,6 +195,7 @@ def init_langs():
         awatese.numbers.append('Řąziya ' + number)
 
     yashuhay = Lang(
+        'yashuhay',
         [
             'Emáathashi', 'Shiishih', 'Kingyáh', 'Ngyaangma',
             'Thuuha', 'Kithu\'oshah', 'Ashihoshih', 'Ngyinggáa',
@@ -202,6 +211,7 @@ def init_langs():
     )
 
     karduvic = Lang(
+        'karduvic',
         [
             'Yàr', 'Ngùkyung', 'Dàng', 'Lì Veng', 'Tyer', 'Tircùr'
         ],
@@ -269,8 +279,9 @@ def byname(lang):
 
 
 def given_name(lang):
-    if 'Eekak' in lang.given_names:
+    if lang.name == 'yashuhay' or lang.name == 'karduvic':
         # Always return given names (moiety names) for Yashuhay
+        # Always return given names (surname + given name) for Karduvic
         return random.choice(lang.given_names)
     if random.randint(1, 3) > 1:
         return ''
@@ -280,7 +291,7 @@ def given_name(lang):
 
 
 def ngupname(lang):
-    if 'Lhouq' in lang.bynames:
+    if lang.name == 'kwang':
         # Always return bynames (family names) and given names for Kwang
         return random.choice(lang.bynames) + ' ' + random.choice(lang.given_names)
     name = datename(lang)
