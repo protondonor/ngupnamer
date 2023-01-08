@@ -216,7 +216,7 @@ def init_langs():
             'Yàr', 'Ngùkyung', 'Dàng', 'Lì Veng', 'Tyer', 'Tircùr'
         ],
         [
-            'Ngè', 'Dè', 'Zì', 'Hòr', 'Hè', 'Dèzì', 'Hèngè', 'Hèdè', 'Hèzì', 'Sot'
+            'Ngè', 'Dè', 'Zì', 'Hòr', 'Hè', 'Dèzì', 'Hèngè', 'Hèdè', 'Hèzì', 'Sot', 'Zur', 'Sov', 'Yozhi', 'Jajū', 'Tong', 'Zuryet', 'Jūyar', 'Mì', 'Ngor', 'Chaurchaur', 'Nger', 'Vek', 'Yizi', 'Yo', 'Ù', 'Vàk', 'Pyo Cù', 'Kèng', 'Sēching', 'Zòr', 'Zheng', 'Tàr', 'Pyezing', 'Mùng'
         ],
         [],
         []
@@ -233,7 +233,7 @@ def init_langs():
         'Jūmè', 'Ngan', 'Yìr', 'Ngyu', 'Lhèng', 'Vorng', 'Pyeng', 'Torzèp', 'Keng', 'Lè', 'Zi', 'Lhehòpep', 'Càurng',
         'Lhèrn', 'Ze', 'Tircù', 'Èngzà', 'Garnga', 'Tiyìnè', 'Sēng', 'Myu', 'Erng', 'Chorcho', 'Ngamo', 'Zhirshu',
         'Zhirhè', 'Vyaur', 'Caung', 'Varva', 'Vordùt', 'Deng', 'Tyiryir', 'Zoch', 'Yàur', 'Tìmè', 'Jē', 'Mve', 'Zhò',
-        'Tyoyeng', 'Yarmè', 'Kàurng', 'Mer', 'Turchur', 'Vemu', 'Zukye', 'Shèrgù', 'Ngaumo', 'Pin', 'Gung', 'Pev'
+        'Tyoyeng', 'Yarmè', 'Kàurng', 'Mer', 'Turchur', 'Vemu', 'Zukye', 'Shèrgù', 'Ngaumo', 'Pin', 'Gung', 'Pev', 'Tung', 'Sēgung', 'Ortè', 'Tiyaur', 'Dùrtē', 'Kuzavèng', 'Curlàr', 'Har', 'Tye', 'Shingshe', 'Tìdurve', 'Liyaur', 'Yùrn', 'Pekye', 'Pyè', 'Zizi', 'Dēngeng', 'Tyàrya', 'Vornorn', 'Chuchu', 'Myèye', 'Yengyung', 'Va', 'Ter'
     ]
 
     karduvic_given_names = [
