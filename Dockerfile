@@ -1,4 +1,4 @@
-FROM amd64/python:3.8-buster
+FROM amd64/python:3.10-buster
 
 WORKDIR /app
 COPY requirements.txt requirements.txt
@@ -8,4 +8,4 @@ RUN pip3 install -r src/semshifter/requirements.txt
 
 COPY . .
 
-CMD ["python3.8", "-m", "bot.py"]
+CMD ["python3.10", "-m", "bot.py"]
