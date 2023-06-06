@@ -14,7 +14,9 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 logging.basicConfig(level=logging.INFO)
 
-client = discord.Client()
+intents = discord.Intents(messages=True)
+
+client = discord.Client(intents=intents)
 
 langs = ngupnames.init_langs()
 
@@ -44,7 +46,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('!ngupname'):
-        print('starting ngupname')
+        logging.info('starting ngupname')
         args = message.content.split()
         if len(args) > 1 and args[1] in langs.keys():
             response = ngupnames.ngupname(langs[args[1]])
@@ -65,7 +67,7 @@ async def on_message(message):
         await message.channel.send(response)
 
     if message.content.startswith('!semshift'):
-        print('starting semshifter')
+        logging.info('starting semshifter')
         async with message.channel.typing():
             try:
                 args = ' '.join(message.content.split(' ')[1:])
@@ -79,7 +81,7 @@ async def on_message(message):
                 raise e
 
     if message.content.startswith('!reverse'):
-        print('starting semshifter in reverse gear')
+        logging.info('starting semshifter in reverse gear')
         async with message.channel.typing():
             try:
                 args = ' '.join(message.content.split(' ')[1:])
@@ -92,4 +94,5 @@ async def on_message(message):
                 await message.channel.send('There was an error! check your logs')
                 raise e
 
+logging.info('starting up the client')
 client.run(TOKEN)
