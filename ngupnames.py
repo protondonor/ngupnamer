@@ -1,4 +1,5 @@
 import random
+import logging
 from dataclasses import dataclass
 from typing import List
 
@@ -291,6 +292,7 @@ def given_name(lang):
 
 
 def ngupname(lang):
+    logging.info('creating a name for ' + lang.name)
     if lang.name == 'kwang':
         # Always return bynames (family names) and given names for Kwang
         return random.choice(lang.bynames) + ' ' + random.choice(lang.given_names)
