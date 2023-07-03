@@ -174,6 +174,26 @@ def init_langs():
         nichoh.numbers.append('Zįꞌzą́ ' + number)
         nichoh.numbers.append('Rà Zįꞌzą́ ' + number)
 
+    maypaw = Lang(
+        'maypaw',
+        [
+            'Akpázax', 'Chíxitsk', 'Dxáa', 'Ñáampa',
+            'Zúkwa', 'Chírûkoxas', 'Waxkóxk', 'Ñiltáaw',
+            'Kúxíw', 'Lyamátéxe', 'Mtsêzán', 'Xáákán',
+            'Ŋóliw'
+        ],
+        [
+            'Mu', 'Ra', 'Zi', 'Ex', 'A',
+            'Ŋliw', 'Ŋléra', 'Ŋléz', 'Okump', 'Dxîꞌâza'
+        ],
+        [],
+        []
+    )
+
+    for number in maypaw.numbers[:-1]:
+        maypaw.numbers.append('Dxîꞌâza ' + number)
+        maypaw.numbers.append('Ra Dxîꞌâza ' + number)
+
     awatese = Lang(
         'awatese',
         [
@@ -259,6 +279,7 @@ def init_langs():
         'hlung': hlung,
         'mañi': mañi,
         'nichoh': nichoh,
+        'maypaw': maypaw,
         'awatese': awatese,
         'yashuhay': yashuhay,
         'karduvic': karduvic
