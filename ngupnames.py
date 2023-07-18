@@ -14,6 +14,18 @@ class Lang:
 
 
 def init_langs():
+    manean = Lang(
+            'manean',
+            ['Koras', 'Sisise', 'Yą', 'Ngoyanąngo', 'Luko', 'Tiruke', 'Vaskose', 'Nina', 'Kusuvi', 'Liyametese', 'Miserla', 'Saka', 'Nguning'],
+            ['Mi', 'Ra', 'Li', 'Es', 'Zeni', 'Ngunim', 'Ngunra', 'Ngunli', 'Ngokum', 'Ziyązą'],
+            ['Lu', 'Są', 'Zą', 'Ziyun', 'Mingąb', 'Fin', 'Tabume', 'Sanso', 'Ądufokungo', 'Ądusing', 'Ąduvi', 'Ąduli', 'Nądungavka', 'Nądonisida', 'Nąduvafa', 'Naą Kasą', 'Nu', 'Ngoyakoyze', 'Yu', 'Net', 'Nek', 'Rar', 'Ming', 'Is', 'Ądusaydas'],
+            ['Ząma', 'Susi', 'Ngaze', 'Yavu', 'Isuse', 'Emingkos', 'Atese', 'Asula', 'Ngoyalayes', 'Nikaya', 'Ngungą', 'Savu', 'Tuke', 'Nunume', 'Nąnlore', 'Nguse', 'Tavuning', 'Feton', 'Asavene', 'Kote', 'Ngami', 'Rutaye']
+            )
+
+    for number in manean.numbers[:-1]:
+        manean.numbers.append('Ziyązą ' + number)
+        manean.numbers.append('Ra Ziyązą ' + number)
+
     kwang_names = [
         "A", "Ain", "Auq", "Bãi", "Bãichù", "Baq",
         "Bàw", "Boun", "Chauq", "Chì", "Dã", "Dai",
@@ -231,6 +243,10 @@ def init_langs():
         ['Eekak', 'Kutó', 'Hama']
     )
 
+    for number in yashuhay.numbers[:-1]:
+        yashuhay.numbers.append('Taata ' + number)
+        yashuhay.numbers.append('Hataha ' + number)
+
     karduvic = Lang(
         'karduvic',
         [
@@ -268,11 +284,8 @@ def init_langs():
         for given in karduvic_given_names:
             karduvic.given_names.append(surname + ' ' + given)
 
-    for number in yashuhay.numbers[:-1]:
-        yashuhay.numbers.append('Taata ' + number)
-        yashuhay.numbers.append('Hataha ' + number)
-
     return {
+        'manean': manean,
         'kwang': kwang,
         'chinh': chinh,
         'ndxiixun': ndxiixun,
